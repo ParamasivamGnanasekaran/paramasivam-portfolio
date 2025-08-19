@@ -11,7 +11,7 @@ import {
   Database,
   Users,
   ChevronDown,
-  MapPin,
+  // MapPin,
   Phone,
   Download,
 } from "lucide-react";
@@ -32,16 +32,16 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const skills = [
-    { name: "Angular", level: 95, color: "bg-red-500" },
-    { name: "TypeScript", level: 90, color: "bg-blue-500" },
-    { name: "JavaScript ES6+", level: 95, color: "bg-yellow-500" },
-    { name: "HTML5/CSS3", level: 98, color: "bg-orange-500" },
-    { name: "Plotly.js", level: 88, color: "bg-purple-500" },
-    { name: "Testing (Jasmine/Playwright)", level: 90, color: "bg-teal-500" },
-    { name: "Node.js/ASP.NET", level: 85, color: "bg-green-500" },
-    { name: "SQL", level: 80, color: "bg-blue-600" },
-  ];
+  // const skills = [
+  //   { name: "Angular", level: 95, color: "bg-red-500" },
+  //   { name: "TypeScript", level: 90, color: "bg-blue-500" },
+  //   { name: "JavaScript ES6+", level: 95, color: "bg-yellow-500" },
+  //   { name: "HTML5/CSS3", level: 98, color: "bg-orange-500" },
+  //   { name: "Plotly.js", level: 88, color: "bg-purple-500" },
+  //   { name: "Testing (Jasmine/Playwright)", level: 90, color: "bg-teal-500" },
+  //   { name: "Node.js/ASP.NET", level: 85, color: "bg-green-500" },
+  //   { name: "SQL", level: 80, color: "bg-blue-600" },
+  // ];
 
   const experiences = [
     {
@@ -155,35 +155,35 @@ const App = () => {
     setIsMenuOpen(false);
   };
 
-  const AnimatedSkillBar = ({ skill, index }) => {
-    const [width, setWidth] = useState(0);
+  // const AnimatedSkillBar = ({ skill, index }) => {
+  //   const [width, setWidth] = useState(0);
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setWidth(skill.level);
-      }, index * 200);
-      return () => clearTimeout(timer);
-    }, [skill.level, index]);
+  //   useEffect(() => {
+  //     const timer = setTimeout(() => {
+  //       setWidth(skill.level);
+  //     }, index * 200);
+  //     return () => clearTimeout(timer);
+  //   }, [skill.level, index]);
 
-    return (
-      <div className="mb-4 sm:mb-6">
-        <div className="flex justify-between mb-2">
-          <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
-            {skill.name}
-          </span>
-          <span className="text-sm text-gray-600 dark:text-gray-400">
-            {skill.level}%
-          </span>
-        </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-3">
-          <div
-            className={`h-2 sm:h-3 rounded-full ${skill.color} transition-all duration-1000 ease-out`}
-            style={{ width: `${width}%` }}
-          />
-        </div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div className="mb-4 sm:mb-6">
+  //       <div className="flex justify-between mb-2">
+  //         <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium">
+  //           {skill.name}
+  //         </span>
+  //         <span className="text-sm text-gray-600 dark:text-gray-400">
+  //           {skill.level}%
+  //         </span>
+  //       </div>
+  //       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-3">
+  //         <div
+  //           className={`h-2 sm:h-3 rounded-full ${skill.color} transition-all duration-1000 ease-out`}
+  //           style={{ width: `${width}%` }}
+  //         />
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
@@ -299,6 +299,7 @@ const App = () => {
               <a
                 href="https://drive.google.com/file/d/1oPjS2b5g-WgGfuORHshKGxfkLVwk8gw4/view?usp=drivesdk"
                 target="_blank"
+                rel="noreferrer"
                 download="Paramasivam_Gnanasekaran_Resume.pdf"
                 className="flex items-center justify-center gap-2 bg-green-600 text-white px-6 sm:px-8 py-3 rounded-full hover:bg-green-700 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
@@ -554,7 +555,7 @@ const App = () => {
                         <a
                           href={project.github}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noreferrer"
                           className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                         >
                           <Github size={16} className="mr-1" />
@@ -565,7 +566,7 @@ const App = () => {
                         <a
                           href={project.demo}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noreferrer"
                           className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                         >
                           <ExternalLink size={16} className="mr-1" />
@@ -628,6 +629,7 @@ const App = () => {
                 <a
                   href="https://drive.google.com/file/d/1oPjS2b5g-WgGfuORHshKGxfkLVwk8gw4/view?usp=drivesdk"
                   target="_blank"
+                  rel="noreferrer"
                   download="Paramasivam_Gnanasekaran_Resume.pdf"
                   className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
