@@ -11,7 +11,7 @@ import {
   Database,
   Users,
   ChevronDown,
-  // MapPin,
+  MapPin,
   Phone,
   Download,
 } from "lucide-react";
@@ -81,6 +81,16 @@ const App = () => {
         "Collaborated on REST API implementation using C# ASP.NET",
       ],
     },
+    {
+      title: "Programmer Analyst Trainee Intern",
+      company: "Cognizant Technology Solutions Ltd..",
+      duration: "Mar 2021 - July 2022",
+      location: "Chennai, IN",
+      achievements: [
+        "Worked on developing and debugging web-based components using HTML, CSS, and JavaScript",
+        "Gained hands-on experience in delivering modular web solutions for server applications",
+      ],
+    },
   ];
 
   const projects = [
@@ -113,41 +123,43 @@ const App = () => {
         "AI-powered Specification Compliance Assistant, for analyzing product specifications and their compliance",
       image: genAiImg,
       tech: ["Gen AI", "Python", "Document Processing", "Automation"],
-      details: "App helps move from a traditional automated app to an AI-powered conversational one. Also, teams can focus less on crunching data and more on improving product quality.",
+      details:
+        "App helps move from a traditional automated app to an AI-powered conversational one. Also, teams can focus less on crunching data and more on improving product quality.",
       github: "https://github.com/ParamasivamGnanasekaran/scm.ai",
       // demo: 'https://data-viz-enterprise.netlify.app'
     },
     {
-      title: 'React TypeScript Migration',
-      description: 'Successfully migrated legacy ReactJS application to TypeScript for enhanced type safety and developer experience',
+      title: "React TypeScript Migration",
+      description:
+        "Successfully migrated legacy ReactJS application to TypeScript for enhanced type safety and developer experience",
       image: migrationImg,
-      tech: ['React', 'TypeScript', 'Migration', 'Code Refactoring'],
-      details: 'Improved code reliability and reduced runtime errors by 40%',
+      tech: ["React", "TypeScript", "Migration", "Code Refactoring"],
+      details: "Improved code reliability and reduced runtime errors by 40%",
     },
   ];
 
   const technologies = [
-                  "Angular",
-                  "React",
-                  "TypeScript",
-                  "JavaScript",
-                  "HTML",
-                  "CSS",
-                  "Plotly.js",
-                  "Monaco Editor",
-                  "C#",
-                  "Node.js",
-                  "ASP.NET Web API",
-                  "MSSQL",
-                  "Jasmine",
-                  "Playwright",
-                  "Gen AI",
-                  "Azure DevOps",
-                  "Git",
-                  "Data Visualization Tools", 
-                  "Responsive Web Design", 
-                  "Agile Development"
-                ];
+    "Angular",
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Plotly.js",
+    "Monaco Editor",
+    "C#",
+    "Node.js",
+    "ASP.NET Web API",
+    "MSSQL",
+    "Jasmine",
+    "Playwright",
+    "Gen AI",
+    "Azure DevOps",
+    "Git",
+    "Data Visualization Tools",
+    "Responsive Web Design",
+    "Agile Development",
+  ];
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
@@ -281,12 +293,14 @@ const App = () => {
                 Paramasivam Gnanasekaran
               </span>
             </h1>
-            {/* <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
               Software Developer
-            </h2> */}
+            </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
-              4+ years of experience building scalable, data-driven web applications.
-              Skilled in Angular, React, and modern frontend architectures, delivering high-performance and user-centric solutions.
+              4+ years of experience building scalable, data-driven web
+              applications. Skilled in Angular, React, and modern frontend
+              architectures, delivering high-performance and user-centric
+              solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-12">
@@ -306,15 +320,15 @@ const App = () => {
                 <Download size={16} />
                 Download Resume
               </a>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("contact")}
                 className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 text-sm sm:text-base"
               >
                 Get In Touch
-              </button>
+              </button> */}
             </div>
 
-            {/* <div className="flex justify-center space-x-6 mb-8">
+            <div className="flex justify-center space-x-6 mb-8">
               <a
                 href="https://www.linkedin.com/in/paramasivam-gnanasekaran-51681918b/"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
@@ -328,15 +342,15 @@ const App = () => {
                 <Mail size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
-                href="https://github.com/paramasivam-g"
+                href="https://github.com/ParamasivamGnanasekaran"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
               >
                 <Github size={20} className="sm:w-6 sm:h-6" />
               </a>
-            </div> */}
+            </div>
 
             {/* Contact Info */}
-            {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-2">
                 <Phone size={16} />
                 <span>+91-8148776477</span>
@@ -345,7 +359,7 @@ const App = () => {
                 <MapPin size={16} />
                 <span>Erode, Tamil Nadu, IN</span>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -375,11 +389,11 @@ const App = () => {
                     />
                   </div> */}
                   <img
-                  src={picOfMe}
-                  alt="Paramasivam-Gnanasekaran"
-                  className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center"
-                />
-                  </div>
+                    src={picOfMe}
+                    alt="Paramasivam-Gnanasekaran"
+                    className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center"
+                  />
+                </div>
               </div>
 
               <div className="order-2 lg:order-2">
@@ -601,7 +615,7 @@ const App = () => {
               <h3 className="text-xl sm:text-2xl font-bold mb-6">
                 Get In Touch
               </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
                 <a
                   href="mailto:paramasivamingur07@gmail.com"
                   className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
@@ -627,6 +641,13 @@ const App = () => {
                   {/* <span className="text-xs mt-1 opacity-90">+91-8148776477</span> */}
                 </a>
                 <a
+                  href="https://github.com/ParamasivamGnanasekaran"
+                  className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  <Github size={20} className="sm:w-6 sm:h-6 mb-2" />
+                  <span className="text-sm sm:text-base">GitHub</span>
+                </a>
+                <a
                   href="https://drive.google.com/file/d/1oPjS2b5g-WgGfuORHshKGxfkLVwk8gw4/view?usp=drivesdk"
                   target="_blank"
                   rel="noreferrer"
@@ -635,7 +656,7 @@ const App = () => {
                 >
                   <Download size={20} className="sm:w-6 sm:h-6 mb-2" />
                   <span className="text-sm sm:text-base">Resume</span>
-                  {/* <span className="text-xs mt-1 opacity-90">Download PDF</span> */}
+                  {/* <span className="text-xs mt-1 opacity-90">Download PDF</span>  */}
                 </a>
               </div>
             </div>
