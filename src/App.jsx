@@ -14,12 +14,16 @@ import {
   MapPin,
   Phone,
   Download,
+  BookOpen,
+  Calendar
 } from "lucide-react";
 import enterpriseImg from "../src/images/enterprise-data-visualization-platform.jpg";
 import hospitalImg from "../src/images/hospital-management-system.jpg";
 import genAiImg from "../src/images/genai-app.jpg";
 import migrationImg from "../src/images/js-to-ts-migration.jpg";
 import picOfMe from "../src/images/picofme.png";
+import monoVsPoly from "../src/images/monovspoly.png";
+import scalingFrontend from "../src/images/scaling-frontend.png";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,9 +99,9 @@ const App = () => {
 
   const projects = [
     {
-      title: "Enterprise Data Visualization Platform",
+      title: "SystemLink Enterprise",
       description:
-        "Micro front-end architecture with Angular, featuring advanced data visualization using Plotly.js and Monaco Editor",
+        "SystemLink™ software is a trusted, centralized platform for engineering and test teams of all sizes to plan, manage, and optimize tests. It simplifies software deployment and systems management and boosts performance by using data to find correlations and remove inefficiencies",
       image: enterpriseImg,
       tech: [
         "Angular",
@@ -107,15 +111,17 @@ const App = () => {
         "Micro Frontend",
       ],
       details:
-        "Reduced integration time by 10% and improved deployment modularity",
+        "Enables data visualization and analysis for engineering teams",
+      demo: "https://www.ni.com/docs/en-US/bundle/systemlink-enterprise/page/systemlink-enterprise.html?srsltid=AfmBOorlQP7xusWQzphCWJwiGRUpNyWEAiNFfKnmqR5UmFLF7N9mDnRJ",
     },
     {
-      title: "Hospital Management System",
+      title: "Provider Data Management",
       description:
-        "Real-time patient data tracking system with live database integration and interactive dashboards",
+        "The only end-to-end provider data management solution in all of healthcare. Maintain one source of provider data. Experience faster reimbursement. Achieve continuous quality improvement",
       image: hospitalImg,
       tech: ["Angular", "C# ASP.NET", "MSSQL", "Real-time Data"],
       details: "Enabled medical staff to track live patient data efficiently",
+      demo: "https://www.symplr.com/solutions/provider-data-management"
     },
     {
       title: "Gen AI Specification Compliance Assistant",
@@ -134,7 +140,7 @@ const App = () => {
         "Successfully migrated legacy ReactJS application to TypeScript for enhanced type safety and developer experience",
       image: migrationImg,
       tech: ["React", "TypeScript", "Migration", "Code Refactoring"],
-      details: "Improved code reliability and reduced runtime errors by 40%",
+      details: "Improved code reliability and migrated to TypeScript",
     },
   ];
 
@@ -159,6 +165,27 @@ const App = () => {
     "Data Visualization Tools",
     "Responsive Web Design",
     "Agile Development",
+  ];
+
+  const blogPosts = [
+    {
+      title: 'Scaling Frontend Applications: From Monoliths to Micro-frontends',
+      excerpt: 'Learn how to build scalable frontend applications using monoliths, modular monolith and micro-frontend architectures, with best practices for team collaboration.',
+      date: 'September 23, 2025',
+      readTime: '10 min read',
+      image: scalingFrontend,
+      tags: [ 'Micro Frontend', 'Architecture', 'Frontend Development'],
+      url: 'https://medium.com/@paramasivamingur07/scaling-frontend-applications-from-monoliths-to-micro-frontends-f2897ff2029b'
+    },
+    {
+      title: 'Mono-repositories vs. Poly-repositories',
+      excerpt: 'Understand the trade-offs between mono-repositories and poly-repositories in modern software development.',
+      date: 'October 3, 2025',
+      readTime: '4 min read',
+      image: monoVsPoly,
+      tags: [ 'Mono-repositories', 'Poly-repositories', 'Software Development'],
+      url: 'https://medium.com/@paramasivamingur07/mono-repositories-vs-polyrepositories-1b123a2ec304'
+    },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -221,6 +248,7 @@ const App = () => {
                 "experience",
                 "skills",
                 "projects",
+                "blog",
                 "contact",
               ].map((item) => (
                 <button
@@ -526,72 +554,159 @@ const App = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6">
         <div className="container mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
-            Featured Projects
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">
-                    {project.description}
-                  </p>
-                  <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-4">
-                    {project.details}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {(project.github || project.demo) && (
-                    <div className="flex space-x-4 mt-auto">
-                      {project.github && (
-                        <a
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Featured Projects</h2>
+          
+          {/* Horizontal Scrollable Container */}
+          <div className="relative">
+            <div className="overflow-x-auto pb-4 hide-scrollbar">
+              <div className="flex gap-6 sm:gap-8" style={{ width: 'max-content' }}>
+                {projects.map((project, index) => (
+                  <div key={index} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ width: '340px', flexShrink: 0 }}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">{project.description}</p>
+                      <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-4">{project.details}</p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tech.map((tech, techIndex) => (
+                          <span 
+                            key={techIndex}
+                            className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="flex space-x-4">
+                        {project.github &&
+                          <a 
                           href={project.github}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                         >
                           <Github size={16} className="mr-1" />
                           <span className="text-sm">Code</span>
-                        </a>
-                      )}
-                      {project.demo && (
-                        <a
+                        </a>}
+                        {project.demo && <a 
                           href={project.demo}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                         >
                           <ExternalLink size={16} className="mr-1" />
                           <span className="text-sm">Demo</span>
-                        </a>
-                      )}
+                        </a>}
+                      </div>
                     </div>
-                  )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Scroll Indicator */}
+            <div className="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+              ← Scroll to see more projects →
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-100 dark:bg-gray-900">
+        <div className="container mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Latest Blog Posts</h2>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Sharing my insights and experiences on frontend development, architecture patterns, and modern web technologies
+              </p>
+              {/* <a 
+                href="https://medium.com/@paramasivamingur07"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                <BookOpen size={18} />
+                <span>View all posts on Medium</span>
+                <ExternalLink size={14} />
+              </a> */}
+            </div>
+            
+            {/* Horizontal Scrollable Container */}
+            <div className="relative">
+              <div className="overflow-x-auto pb-4 hide-scrollbar">
+                <div className="flex gap-6 sm:gap-8" style={{ width: 'max-content' }}>
+                  {blogPosts.map((post, index) => (
+                    <article key={index} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ width: '320px', flexShrink: 0 }}>
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-6">
+                        <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3 gap-3">
+                          <span className="flex items-center gap-1">
+                            <Calendar size={12} />
+                            {post.date}
+                          </span>
+                          <span>•</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                        
+                        <h3 className="text-lg font-bold mb-2 line-clamp-2">{post.title}</h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{post.excerpt}</p>
+                        
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {post.tags.map((tag, tagIndex) => (
+                            <span 
+                              key={tagIndex}
+                              className="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        <a 
+                          href={post.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors gap-1 text-sm font-medium"
+                        >
+                          Read More
+                          <ExternalLink size={14} />
+                        </a>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
-            ))}
+              
+              {/* Scroll Indicator */}
+              <div className="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+                ← Scroll to see more articles →
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <a 
+                href="https://medium.com/@paramasivamingur07"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                <BookOpen size={18} />
+                View All Articles on Medium
+                <ExternalLink size={16} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -618,6 +733,8 @@ const App = () => {
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
                 <a
                   href="mailto:paramasivamingur07@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <Mail size={20} className="sm:w-6 sm:h-6 mb-2" />
@@ -626,6 +743,8 @@ const App = () => {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/paramasivam-gnanasekaran-51681918b/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <Linkedin size={20} className="sm:w-6 sm:h-6 mb-2" />
@@ -642,12 +761,24 @@ const App = () => {
                 </a>
                 <a
                   href="https://github.com/ParamasivamGnanasekaran"
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <Github size={20} className="sm:w-6 sm:h-6 mb-2" />
                   <span className="text-sm sm:text-base">GitHub</span>
                 </a>
                 <a
+                  href="https://medium.com/@paramasivamingur07"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-col items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  <BookOpen size={20} className="sm:w-6 sm:h-6 mb-2" />
+                  <span className="text-sm sm:text-base">Blog</span>
+                  {/* <span className="text-xs mt-1 opacity-90">Connect with me</span> */}
+                </a>
+                {/* <a
                   href="https://drive.google.com/file/d/1oPjS2b5g-WgGfuORHshKGxfkLVwk8gw4/view?usp=drivesdk"
                   target="_blank"
                   rel="noreferrer"
@@ -656,8 +787,8 @@ const App = () => {
                 >
                   <Download size={20} className="sm:w-6 sm:h-6 mb-2" />
                   <span className="text-sm sm:text-base">Resume</span>
-                  {/* <span className="text-xs mt-1 opacity-90">Download PDF</span>  */}
-                </a>
+                  {/* <span className="text-xs mt-1 opacity-90">Download PDF</span>  
+                </a> */}
               </div>
             </div>
           </div>
