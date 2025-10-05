@@ -282,6 +282,7 @@ const App = () => {
                   "experience",
                   "skills",
                   "projects",
+                  "blog",
                   "contact",
                 ].map((item) => (
                   <button
