@@ -24,6 +24,7 @@ import migrationImg from "../src/images/js-to-ts-migration.jpg";
 import picOfMe from "../src/images/picofme.png";
 import monoVsPoly from "../src/images/monovspoly.png";
 import scalingFrontend from "../src/images/scaling-frontend.png";
+import creationalPatterns from "../src/images/DPC.png";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -185,6 +186,15 @@ const App = () => {
       image: monoVsPoly,
       tags: [ 'Mono-repositories', 'Poly-repositories', 'Software Development'],
       url: 'https://medium.com/@paramasivamingur07/mono-repositories-vs-polyrepositories-1b123a2ec304'
+    },
+    {
+      title: 'Understanding Design Patterns Part 1: Creational Patterns',
+      excerpt: 'Explore the foundational creational design patterns—Singleton, Factory, Abstract Factory, Builder, and Prototype. Learn how these patterns help you create flexible, reusable, and maintainable object creation logic in modern software development.',
+      date: 'October 11, 2025',
+      readTime: '6 min read',
+      image: creationalPatterns, 
+      tags: ['Design Patterns', 'Creational Patterns', 'Software Architecture', 'Clean Code'],
+      url: 'https://medium.com/@paramasivamingur07/understanding-design-patterns-2763007fd5d1'
     },
   ];
 
