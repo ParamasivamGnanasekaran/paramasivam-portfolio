@@ -25,6 +25,7 @@ import picOfMe from "../src/images/picofme.png";
 import monoVsPoly from "../src/images/monovspoly.png";
 import scalingFrontend from "../src/images/scaling-frontend.png";
 import creationalPatterns from "../src/images/DPC.png";
+import structuralPatterns from "../src/images/DPS.png";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -181,7 +182,7 @@ const App = () => {
     {
       title: 'Mono-repositories vs. Poly-repositories',
       excerpt: 'Understand the trade-offs between mono-repositories and poly-repositories in modern software development.',
-      date: 'October 3, 2025',
+      date: 'October 03, 2025',
       readTime: '4 min read',
       image: monoVsPoly,
       tags: [ 'Mono-repositories', 'Poly-repositories', 'Software Development'],
@@ -195,6 +196,15 @@ const App = () => {
       image: creationalPatterns, 
       tags: ['Design Patterns', 'Creational Patterns', 'Software Architecture', 'Clean Code'],
       url: 'https://medium.com/@paramasivamingur07/understanding-design-patterns-2763007fd5d1'
+    },
+    {
+      title: 'Understanding Design Patterns Part 2: Structural Patterns',
+      excerpt: 'Dive into structural design patterns—Adapter, Decorator, Proxy, Composite, and Facade. Discover how these patterns enable you to compose classes and objects into larger structures while keeping them flexible and efficient.',
+      date: 'November 02, 2025',
+      readTime: '5 min read',
+      image: structuralPatterns,
+      tags: ['Design Patterns', 'Structural Patterns', 'Software Architecture', 'Clean Code'],
+      url: 'https://medium.com/@paramasivamingur07/understanding-design-patterns-b024c0681555'
     },
   ];
 
@@ -632,7 +642,7 @@ const App = () => {
       {/* Blog Section */}
       <section id="blog" className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-100 dark:bg-gray-900">
         <div className="container mx-auto">
-          <div className="max-w-6xl mx-auto">
+          <div>
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">Latest Blog Posts</h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
