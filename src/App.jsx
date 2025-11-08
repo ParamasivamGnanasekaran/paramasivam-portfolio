@@ -26,6 +26,8 @@ import monoVsPoly from "../src/images/monovspoly.png";
 import scalingFrontend from "../src/images/scaling-frontend.png";
 import creationalPatterns from "../src/images/DPC.png";
 import structuralPatterns from "../src/images/DPS.png";
+import behavioralPatterns from "../src/images/DPB.png";
+import angularBestPractices from "../src/images/ABP.png";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -189,6 +191,15 @@ const App = () => {
       url: 'https://medium.com/@paramasivamingur07/mono-repositories-vs-polyrepositories-1b123a2ec304'
     },
     {
+      title: 'Angular Best Practices Every Developer Should Follow',
+      excerpt: 'Learn the essential best practices for developing Angular applications, including coding standards, project structure, and performance optimization techniques.',
+      date: 'November 11, 2025',
+      readTime: '3 min read',
+      image: angularBestPractices,
+      tags: ['Angular', 'Best Practices', 'Frontend Development'],
+      url: 'https://medium.com/@paramasivamingur07/angular-best-practices-every-developer-should-follow-6b93f4c06133'
+    },
+    {
       title: 'Understanding Design Patterns Part 1: Creational Patterns',
       excerpt: 'Explore the foundational creational design patterns—Singleton, Factory, Abstract Factory, Builder, and Prototype. Learn how these patterns help you create flexible, reusable, and maintainable object creation logic in modern software development.',
       date: 'October 11, 2025',
@@ -206,6 +217,16 @@ const App = () => {
       tags: ['Design Patterns', 'Structural Patterns', 'Software Architecture', 'Clean Code'],
       url: 'https://medium.com/@paramasivamingur07/understanding-design-patterns-b024c0681555'
     },
+    {
+      title: 'Understanding Design Patterns Part 3: Behavioral Patterns',
+      excerpt: 'Explore behavioral design patterns—Strategy, Observer, Command, and State. Learn how these patterns help you define clear communication between objects and manage complex workflows in your applications.',
+      date: 'November 11, 2025',
+      readTime: '5 min read',
+      image: behavioralPatterns,
+      tags: ['Design Patterns', 'Behavioral Patterns', 'Software Architecture', 'Clean Code'],
+      url: 'https://medium.com/@paramasivamingur07/understanding-design-patterns-6af2a19bff2a'
+    },
+
   ];
 
   const scrollToSection = (sectionId) => {
